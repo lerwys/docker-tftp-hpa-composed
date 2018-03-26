@@ -1,0 +1,34 @@
+version: '3.4'
+
+services:
+  tftp-hpa:
+    image: lnlsdig/tftp-hpa
+    ports:
+      - "69:69/udp"
+    container_name: tftp-hpa
+    depends_on:
+      - debian-base-image
+    volumes:
+      - type: bind
+        source: ./data/pxelinux.cfg
+        target: /tftpboot/pxelinux.cfg
+        volume:
+          read_only: true
+      - type: volume
+        source: debian-base-image-volume
+        target: /tftpboot/init
+        volume:
+          read_only: true
+
+  debian-base-image:
+    image: lnlsdig/debian-base-image
+    container_name: debian-base-image
+    volumes:
+      - type: volume
+        source: debian-base-image-volume
+        target: /tftpboot/init
+        volume:
+          read_only: true
+
+volumes:
+  debian-base-image-volume:

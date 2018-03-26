@@ -1,0 +1,7 @@
+# boot diskless computer with debian stretch
+default Debian
+prompt 1
+timeout 10
+label Debian
+kernel init/vmlinuz-4.9.0-4-amd64
+append root=/dev/nfs initrd=init/initrd.img-4.9.0-4-amd64 nfsroot=192.168.2.12:/srv/nfsroot ro panic=10 ipv6.disable=1 ip=:::::eno1
