@@ -4,4 +4,4 @@ prompt 1
 timeout 10
 label Debian
 kernel init/vmlinuz-4.9.0-6-amd64
-append root=/dev/nfs initrd=init/initrd.img-4.9.0-6-amd64 nfsroot=192.168.2.12:/exports/rootfs ro panic=10 ipv6.disable=1 ip=:::::eno1
+append root=/dev/nfs initrd=init/initrd.img-4.9.0-6-amd64 nfsroot=/exports/rootfs ro panic=10 ipv6.disable=1 ip=:::::eno1:dhcp
