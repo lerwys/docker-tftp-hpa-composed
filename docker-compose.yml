@@ -2,6 +2,7 @@ version: '3.4'
 
 services:
   tftp-hpa:
+    restart: always
     image: lnls/tftp-hpa
     ports:
       - "69:69/udp"
