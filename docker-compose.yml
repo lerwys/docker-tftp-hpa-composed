@@ -22,7 +22,7 @@ services:
           read_only: true
 
   debian-base-image:
-    image: lnls/debian-base-image
+    image: lnls/debian-base-image:9.4-20181105
     container_name: debian-base-image
     volumes:
       - type: volume
