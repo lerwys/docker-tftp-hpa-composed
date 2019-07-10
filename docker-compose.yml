@@ -6,6 +6,9 @@ services:
     image: lnls/tftp-hpa
     ports:
       - "69:69/udp"
+    logging:
+      options:
+        max-size: 50m
     container_name: tftp-hpa
     depends_on:
       - debian-base-image
