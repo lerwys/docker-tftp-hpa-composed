@@ -25,7 +25,7 @@ services:
           read_only: true
 
   debian-base-image:
-    image: lnls/debian-base-image:pre-9.9-kernel-4.9.0-11-20200122
+    image: lnls/debian-base-image:9.9-kernel-4.9.0-11-20200122
     container_name: debian-base-image
     volumes:
       - type: volume
